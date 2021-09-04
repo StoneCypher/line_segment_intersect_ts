@@ -1,2 +1,2 @@
-declare const version = "0.3.0", built = 1630717926908;
+declare const version = "0.4.0", built = 1630718136568;
 export { version, built };

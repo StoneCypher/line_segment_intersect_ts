@@ -1,14 +1,18 @@
 {
   "name": "line_segment_intersect_ts",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Line segment intersection algorithm in Typescript.  Fast and well tested.",
-  "main": "dist/index.js",
+  "module": "dist/index.es6.js",
+  "main": "dist/index.cjs.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf -f build && rimraf -f dist && mkdir build && cd build && mkdir typescript && mkdir rollup && mkdir terser && cd .. && mkdir dist && cd src/ts && rimraf -f generated_code && mkdir generated_code && cd ../..",
     "version": "node ./src/build_js/set_version.js",
     "rollup": "rollup -c",
     "typescript": "tsc --build tsconfig.json",
-    "build": "npm run clean && npm run version && npm run typescript && npm run rollup",
+    "terser": "terser -c passes=2 -m --sequences 40 build/rollup/index.cjs.js > build/terser/index.cjs.js && terser -c passes=2 -m --sequences 40 --module build/rollup/index.es6.js > build/terser/index.es6.js",
+    "dist": "cp build/terser/index.es6.js dist && cp build/terser/index.cjs.js dist && cp build/typescript/*.d.ts dist",
+    "build": "npm run clean && npm run version && npm run typescript && npm run rollup && npm run terser && npm run dist",
     "test": "jest"
   },
   "repository": {
@@ -33,6 +37,7 @@
     "@rollup/plugin-node-resolve": "^13.0.4",
     "rimraf": "^3.0.2",
     "rollup": "^2.56.3",
+    "terser": "^5.7.2",
     "typescript": "^4.4.2"
   }
 }
