@@ -1,0 +1,30 @@
+{
+  "name": "line_segment_intersect_ts",
+  "version": "0.2.0",
+  "description": "Line segment intersection algorithm in Typescript.  Fast and well tested.",
+  "main": "dist/index.js",
+  "scripts": {
+    "typescript": "tsc --build tsconfig.json",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StoneCypher/line_segment_intersect_ts.git"
+  },
+  "keywords": [
+    "line",
+    "segment",
+    "intersect",
+    "intersection",
+    "stonecypher"
+  ],
+  "author": "John Haugeland <stonecypher@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StoneCypher/line_segment_intersect_ts/issues"
+  },
+  "homepage": "https://github.com/StoneCypher/line_segment_intersect_ts#readme",
+  "devDependencies": {
+    "typescript": "^4.4.2"
+  }
+}
