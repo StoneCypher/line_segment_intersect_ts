@@ -1,6 +1,6 @@
 
-const version = "0.4.0",
-      built   = 1630718136568;
+const version = "0.6.0",
+      built   = 1630910823276;
 
 export { version, built };
 
